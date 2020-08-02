@@ -10,26 +10,26 @@ Features available based on the user role
 <b>Features available based on the user role</b>\n
 
   <b>ADMIN</b>
-Adding products
-Updating products
-Deleting products
-Manage Orders
+Adding products\n
+Updating products\n
+Deleting products\n
+Manage Orders\n
 
 
- <b>CUSTOMER</b>
-Registering into System
-Login into Website
-Updating Address
-Adding product to Cart
-Updating/ Deleting the Product
-Placing the order
+ <b>CUSTOMER</b>\n
+Registering into System\n
+Login into Website\n
+Updating Address\n
+Adding product to Cart\n
+Updating Deleting the Product\n
+Placing the order\n
 
 
-<b>TECHNOLOGIES</b>
-JSP
-CSS3
-Swagger2 for API Documentation.
-Spring Boot
-Hibernate with JPA
-MySQL
+<b>TECHNOLOGIES</b>\n
+JSP\n
+CSS3\n
+Swagger2 for API Documentation.\n
+Spring Boot\n
+Hibernate with JPA\n
+MySQL\n
 
