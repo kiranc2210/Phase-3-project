@@ -7,7 +7,7 @@ E-Commerce application developed for performing Admin and Customer user role ope
 2) Front End: User interfaces designed and developed using JSP  utilising web services for handling appropriate user actions
 Features available based on the user role
 
-<b>Features available based on the user role</b>
+<h2>Features available based Requirement</h2>
 
   <b>ADMIN</b>
   <ul><li>
@@ -47,6 +47,8 @@ Features available based on the user role
 <b>>>To open Swagger (interactive) API documentation, navigate your browser to [YOUR-URL]/swagger-ui.html</b>
 Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/swagger-ui.html">http://localhost:4560/swagger-ui.html</a>
 
+<h3>[ Base URL: localhost:4560/ ] http://localhost:4560/v2/api-docs</h3>
+
 
 
 <b>How to Run</b>
@@ -59,4 +61,22 @@ Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/sw
 <li>Run mvn spring-boot:run.</li>
 <li>Spring Boot will import mock data into database by executing data.sql automatically.</li>
 <li>The backend server is running on http://localhost:4560/.</li>
+</br>
+<b>OR</b>
+</br>
+<p><b>Prior Run the below queries for the Admin Login on the MySql Workbentch</b></p>
+</br><b>
+<p>CREATE DATABASE sportyshoes;</p>
+<p>INSERT INTO sportyshoes.admin_tbl VALUES(1001,"Admin_1001",61162433);</p></b>
 
+<p>
+<h4>Please Modify the following properties in “application.properties file” with your credentials:</h4></br>
+      <b> spring.datasource.username=root</br>
+      spring.datasource.password=Mysql@61162433</b></br>
+
+
+<h4>GitHub Project Link:</h4>
+<b>git@github.com:kiranc2210/Phase-3-project.git</b>
+<h4>Api Documentation Link:</h4>
+<b>http://localhost:4560/swagger-ui.html</b>
+</P>
