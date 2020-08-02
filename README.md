@@ -59,9 +59,10 @@ Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/sw
 <li>Run mvn spring-boot:run.</li>
 <li>Spring Boot will import mock data into database by executing data.sql automatically.</li>
 <li>The backend server is running on http://localhost:4560/.</li>
-
+</br>
 <b>OR</b>
 
-<p><b>Preior Run the below queries for the Admin Login on the MySql Workbentch</b></p>
+<p><b>Prior Run the below queries for the Admin Login on the MySql Workbentch</b></p>
+</br>
 <p>INSERT INTO sportyshoes.admin_tbl VALUES(1001,"Admin_1001",61162433);</p>
 
