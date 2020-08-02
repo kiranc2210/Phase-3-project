@@ -18,7 +18,7 @@ Features available based on the user role
 
 
  <b>CUSTOMER</b>
- <ul><li>
+ <ul>
 <li>Registering into System</li>
 <li>Login into Website</li>
 <li>Updating his/her profile</li>
