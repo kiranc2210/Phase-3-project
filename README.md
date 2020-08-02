@@ -65,14 +65,14 @@ Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/sw
 <b>OR</b>
 
 <p><b>Prior Run the below queries for the Admin Login on the MySql Workbentch</b></p>
-</br>
+</br><b>
 <p>CREATE DATABASE sportyshoes;</p>
-<p>INSERT INTO sportyshoes.admin_tbl VALUES(1001,"Admin_1001",61162433);</p>
+<p>INSERT INTO sportyshoes.admin_tbl VALUES(1001,"Admin_1001",61162433);</p></b>
 
 <p>
 Please Modify the following properties in “application.properties file” with your credentials:</br>
-       spring.datasource.username=root</br>
-spring.datasource.password=Mysql@61162433</br>
+      <b> spring.datasource.username=root</br>
+      spring.datasource.password=Mysql@61162433</b></br>
 
 
 <h4>GitHub Project Link:</h4>
