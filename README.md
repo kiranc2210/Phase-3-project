@@ -28,7 +28,7 @@ Features available based on the user role
 
 
 <b>TECHNOLOGIES</b>
-<ul><li>
+<ul>
 <li>JSP</li>
 <li>CSS3</li>
 <li>Swagger2 for API Documentation.</li>
