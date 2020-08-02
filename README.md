@@ -7,7 +7,7 @@ E-Commerce application developed for performing Admin and Customer user role ope
 2) Front End: User interfaces designed and developed using JSP  utilising web services for handling appropriate user actions
 Features available based on the user role
 
-<b><p style="color:blue; font-size:18px;">Features available based Requirement</p></b>
+<h3>Features available based Requirement</h3>
 
   <b>ADMIN</b>
   <ul><li>
@@ -47,7 +47,7 @@ Features available based on the user role
 <b>>>To open Swagger (interactive) API documentation, navigate your browser to [YOUR-URL]/swagger-ui.html</b>
 Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/swagger-ui.html">http://localhost:4560/swagger-ui.html</a>
 
-<h2>[ Base URL: localhost:4560/ ] http://localhost:4560/v2/api-docs</h2>
+<h4>[ Base URL: localhost:4560/ ] http://localhost:4560/v2/api-docs</h4>
 
 
 
