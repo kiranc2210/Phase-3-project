@@ -7,7 +7,7 @@ E-Commerce application developed for performing Admin and Customer user role ope
 2) Front End: User interfaces designed and developed using JSP  utilising web services for handling appropriate user actions
 Features available based on the user role
 
-<b><p style="color:blue; font-size:14px;">Features available based on the user role</p></b>
+<b><p style="color:blue; font-size:18px;">Features available based on the user role</p></b>
 
   <b>ADMIN</b>
   <ul><li>
