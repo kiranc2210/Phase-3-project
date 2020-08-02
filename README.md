@@ -47,6 +47,8 @@ Features available based on the user role
 <b>>>To open Swagger (interactive) API documentation, navigate your browser to [YOUR-URL]/swagger-ui.html</b>
 Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/swagger-ui.html">http://localhost:4560/swagger-ui.html</a>
 
+<h2>[ Base URL: localhost:4560/ ] http://localhost:4560/v2/api-docs</h2>
+
 
 
 <b>How to Run</b>
