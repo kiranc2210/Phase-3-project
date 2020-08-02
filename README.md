@@ -36,5 +36,8 @@ Features available based on the user role
 <li>Hibernate with JPA</li>
 <li>MySQL</li></ul>
 
-<b>Web services project can be found in ("git@github.com:kiranc2210/Phase-3-project.git")<a href="http://localhost:4560/admincategories">Sporty-Shoes</a></b>
+<b>Web services project can be found in ("git@github.com:kiranc2210/Phase-3-project.git")<a href="http://localhost:4560/">Sporty-Shoes</a></b>
+
+<p>Navigate to http://localhost:4560/ The app will automatically reload if you change any of the source files.</p>
+
 
