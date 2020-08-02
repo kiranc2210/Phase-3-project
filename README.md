@@ -38,6 +38,6 @@ Features available based on the user role
 
 <b>Web services project can be found in ("git@github.com:kiranc2210/Phase-3-project.git")<a href="http://localhost:4560/">Sporty-Shoes</a></b>
 
-<p>Navigate to http://localhost:4560/ The app will automatically reload if you change any of the source files.</p>
+<p>Navigate to <a href="http://localhost:4560/">http://localhost:4560/</a> The app will automatically reload if you change any of the source files.</p>
 
 
