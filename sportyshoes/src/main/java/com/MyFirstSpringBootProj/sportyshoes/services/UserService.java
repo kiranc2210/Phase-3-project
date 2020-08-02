@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.MyFirstSpringBootProj.sportyshoes.models.Users;
 import com.MyFirstSpringBootProj.sportyshoes.repositories.UserRepository;
@@ -14,25 +15,32 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepo;
 
-
+	@Transactional
 	public Users addUsers(Users user) {
-	
-		return 	userRepo.save(user);
-		
-	}
-	
-	
-		public Users getUserById(long l) {
-		 	return userRepo.findById((long) l).orElse(null);
-		}
-	 
 
+		return userRepo.save(user);
+
+	}
+
+	@Transactional
+	public List<Users> getAllUsers() {
+		return (List<Users>) userRepo.findAll();
+	}
+
+	@Transactional
+	public Users getUserById(long l) {
+		return userRepo.findById((long) l).orElse(null);
+	}
+
+	@Transactional
 	public Users getUserByEmailId(String emailId) {
 		return userRepo.findByEmailId(emailId);
 	}
 
+	@Transactional
 	public void updateUser(Users user) {
 		Users existingUser = userRepo.findById((long) user.getID()).orElse(null);
+		
 		existingUser.setFname(user.getFname());
 		existingUser.setLname(user.getLname());
 		existingUser.setAge(user.getAge());
@@ -42,8 +50,9 @@ public class UserService {
 		existingUser.setDateAdded(user.getDateAdded());
 		userRepo.save(existingUser);
 	}
+	@Transactional
+	public void deleteUserById(long Id) {
+		 userRepo.deleteById(Id);
+	}
 
-		public List<Users> getAllUsers() {
-		 return userRepo.findAll();
-		}	 
 }

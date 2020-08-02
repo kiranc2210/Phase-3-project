@@ -21,9 +21,12 @@ import com.MyFirstSpringBootProj.sportyshoes.models.PurchaseItem;
 import com.MyFirstSpringBootProj.sportyshoes.services.ProductService;
 import com.MyFirstSpringBootProj.sportyshoes.services.PurchaseItemService;
 import com.MyFirstSpringBootProj.sportyshoes.services.PurchaseService;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
  
 
-
+@Api(value="Purshase Controller For Sporty Shoes Application")
 @Controller
 public class PurchaseController {
 
@@ -36,6 +39,8 @@ public class PurchaseController {
 	@Autowired
 	private PurchaseItemService purchaseItemService;
 
+	
+	@ApiOperation(value = "User will be redirected to Purchase Page if he/she already log in to Application or else  will redirect to member login page")
 	  @GetMapping(value = "/memberpurchases")
 	    public String memberpurchases(ModelMap map, javax.servlet.http.HttpServletRequest request) 
 	    {

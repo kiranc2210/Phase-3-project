@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,34 +19,49 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ApiModel(description = "All details about the User. ")
 @Table(name = "USER_TBL")
 public class Users {
 
 	@Id
+	@ApiModelProperty(notes = "The database generated user ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private long ID;
 
+	@ApiModelProperty(notes = "user First Name")
 	@Column(name = "fname")
 	private String fname;
 
+	@ApiModelProperty(notes = "user Last Name")
 	@Column(name = "lname")
 	private String lname;
 
+	@ApiModelProperty(notes = "user Address")
 	@Column(name = "address")
 	private String address;
 
+	@ApiModelProperty(notes = "user Age")
 	@Column(name = "age")
 	private int age;
 
+	@ApiModelProperty(notes = "user Added Date")
 	@Column(name = "date_added")
 	private Date dateAdded;
 
+	@ApiModelProperty(notes = "user Email-ID")
 	@Column(name = "emailid")
 	private String emailId;
 
+	@ApiModelProperty(notes = "user Password")
 	@Column(name = "pwd")
 	private String pwd;
+
+	@Override
+	public String toString() {
+		return "Users [ID=" + ID + ", fname=" + fname + ", lname=" + lname + ", address=" + address + ", age=" + age
+				+ ", dateAdded=" + dateAdded + ", emailId=" + emailId + ", pwd=" + pwd + "]";
+	}
 
 	public long getID() {
 		return ID;

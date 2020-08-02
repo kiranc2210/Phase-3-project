@@ -16,7 +16,9 @@ import com.MyFirstSpringBootProj.sportyshoes.models.Product;
 import com.MyFirstSpringBootProj.sportyshoes.services.CategoryService;
 import com.MyFirstSpringBootProj.sportyshoes.services.ProductService;
 
-@Controller("/sportyshoes")
+import io.swagger.annotations.ApiOperation;
+
+@Controller
 public class HomeController {
 	@Autowired
 	private CategoryService categoryService; 
@@ -24,6 +26,7 @@ public class HomeController {
 	@Autowired
 	private ProductService productService; 
 	
+	@ApiOperation(value = "On The Application Load User will be landed on to Index or Home Page")
 	  @GetMapping({"/", "/home"})
 	    public String home(ModelMap map,  javax.servlet.http.HttpServletRequest request) 
 	    {

@@ -32,6 +32,7 @@ public class PurchaseItemService {
 	 @Transactional
 		public void updateItem(PurchaseItem item) {
 		 PurchaseItem pItem = purchaseItemRepo.findById((long) item.getID()).orElse(null);
+		 if(pItem!=null) {
 		 pItem.setPrice(item.getPrice());
 		 pItem.setProductId(item.getProductId());
 		 pItem.setPurchaseId(item.getPurchaseId());
@@ -39,6 +40,7 @@ public class PurchaseItemService {
 		 pItem.setRate(item.getRate());
 		 pItem.setUserId(item.getUserId());
 		 purchaseItemRepo.save(pItem);
+		 }else { purchaseItemRepo.save(item);}
 		}
 		
 

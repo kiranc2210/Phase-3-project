@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;  
@@ -17,30 +19,38 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ApiModel(description = "All details about the Purchase Items. ")
 @Table(name = "PURCHASEITM_TBL")
 public class PurchaseItem { 
 
 
 	@Id 
+	@ApiModelProperty(notes = "The database generated ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private long ID;
 	
+	@ApiModelProperty(notes = "Purchase ID")
 	@Column(name = "purchase_id")
 	private long purchaseId;
 	
+	@ApiModelProperty(notes = " Product ID")
 	@Column(name = "product_id")
 	private long productId;
 
+	@ApiModelProperty(notes = "user ID")
 	@Column(name = "user_id")
 	private long userId;
 
+	@ApiModelProperty(notes = "ProductId")
 	@Column(name = "rate")
 	private BigDecimal rate;
 
+	@ApiModelProperty(notes = "Purchase Quantity")
 	@Column(name = "qty")
 	private int qty;
 
+	@ApiModelProperty(notes = "Product Price")
 	@Column(name = "price")
 	private BigDecimal price;
 

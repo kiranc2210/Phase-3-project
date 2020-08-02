@@ -12,12 +12,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.MyFirstSpringBootProj.sportyshoes.models.Users;
 import com.MyFirstSpringBootProj.sportyshoes.services.UserService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+@Api(value="Member Controller For Sporty SHoes Application")
 @Controller
 public class MemberController {
 
 	@Autowired
 	private UserService userService;
-
+//==============================================================================
+	@ApiOperation(value = "Redirect To member Login Page")
 	@GetMapping("/login")
 	public String login(ModelMap map) {
 
@@ -25,23 +30,24 @@ public class MemberController {
 		return "login";
 
 	}
-	
-
+//=====================================================================================
+	@ApiOperation(value = "Redirect To member Registration Page")
 	@GetMapping("/signup")
 	public String signup(ModelMap map) {
 		map.addAttribute("pageTitle", "SPORTY SHOES - MEMBER REGISTRATION");
 		return "register";
 	}
-
-	
+//====================================================================================
+	@ApiOperation(value = "User Logged out from the Application & will  redirect to Home Page")
 	@GetMapping("/logout")
 	public String logout(javax.servlet.http.HttpServletRequest request) {
 		HttpSession session = request.getSession();
 	  	session.invalidate();
 
-		return "home";
+		return "redirect:home";
 	}
-	
+//=======================================================================================	
+	@ApiOperation(value = "User Logged out from the Application & will  redirect to Home Page")
 	@PostMapping("/signup")
 	public String signupAction(ModelMap map, javax.servlet.http.HttpServletRequest request,
 			@RequestParam(value = "email_id", required = true) String emailId,
@@ -98,8 +104,8 @@ public class MemberController {
 		map.addAttribute("addedUser", user1.getFname()+" "+user1.getLname());
 		return "register-confirm";
 	}
-	
-
+//================================================================================================
+	@ApiOperation(value = "On succussfull Login user will redirect to \"Dashboard\"  or will redirect to Login page")
 	@PostMapping("/login")
 	public String loginAction(ModelMap map, @RequestParam(value = "email_id", required = true) String emailId,
 			@RequestParam(value = "pwd", required = true) String pwd, javax.servlet.http.HttpServletRequest request) {
@@ -120,10 +126,11 @@ public class MemberController {
 		  session.setAttribute("user_id", user.getID());
 		map.addAttribute("user", user);
 
-		return "/dashboard";
+		return "redirect:dashboard";
 	}
 	
-
+//=======================================================================================
+	@ApiOperation(value = " user will redirect to Edit page to edit his/her profile.")
 	@GetMapping("/editprofile")
 	public String editProfile(ModelMap map, javax.servlet.http.HttpServletRequest request) {
 		HttpSession session = request.getSession();
@@ -137,8 +144,8 @@ public class MemberController {
 
 		return "edit-profile";
 	}
-	
-	
+//======================================================================================
+	@ApiOperation(value = "user can edit his/her profile in this edit page")
 	 @PostMapping("/editprofile")
 	    public String editProfileAction(ModelMap map,
 	    		javax.servlet.http.HttpServletRequest request, 
@@ -181,9 +188,6 @@ public class MemberController {
 		  if (age == null || age.equals("")) {
 			  age = "0";
 		  }
-		  
-		  
-		
 		  user.setFname(fname);
 		  user.setLname(lname);
 		  user.setAge(Integer.parseInt(age));

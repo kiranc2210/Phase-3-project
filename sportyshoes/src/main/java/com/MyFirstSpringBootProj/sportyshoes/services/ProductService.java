@@ -28,11 +28,16 @@ public class ProductService {
 		
 		@Transactional
 		public void updateProduct(Product product) {
+			
 			Product existingProduct = productRepo.findById((long) product.getID()).orElse(null);
+			if(existingProduct!=null) {
 			existingProduct.setName(product.getName());
 			existingProduct.setPrice(product.getPrice());
 			existingProduct.setDateAdded(product.getDateAdded());
-			productRepo.save(existingProduct);
+			productRepo.save(existingProduct);}
+			else {
+				productRepo.save(product);
+			}
 		}
 		
 

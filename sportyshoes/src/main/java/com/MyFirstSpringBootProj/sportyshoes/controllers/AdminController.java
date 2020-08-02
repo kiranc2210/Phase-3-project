@@ -11,9 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.MyFirstSpringBootProj.sportyshoes.models.Admin;
@@ -29,6 +30,9 @@ import com.MyFirstSpringBootProj.sportyshoes.services.PurchaseItemService;
 import com.MyFirstSpringBootProj.sportyshoes.services.PurchaseService;
 import com.MyFirstSpringBootProj.sportyshoes.services.UserService;
 
+import io.swagger.annotations.Api;
+
+@Api(value = "Admin Controller For Sporty SHoes Application")
 @Controller
 public class AdminController {
 
@@ -50,13 +54,15 @@ public class AdminController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value = "/adminlogin", method = RequestMethod.GET)
+//-----------------------------------------------------------------
+	@GetMapping("/adminlogin")
 	public String login(ModelMap map, javax.servlet.http.HttpServletRequest request) {
 		map.addAttribute("pageTitle", "ADMIN LOGIN");
 		return "admin/login";
 	}
 
-	@RequestMapping(value = "/adminloginaction", method = RequestMethod.POST)
+	// ---------------------------------------------------------------
+	@PostMapping("/adminloginaction")
 	public String loginAction(ModelMap map, javax.servlet.http.HttpServletRequest request,
 			@RequestParam(value = "admin_id", required = true) String adminId,
 			@RequestParam(value = "admin_pwd", required = true) String adminPwd) {
@@ -71,11 +77,11 @@ public class AdminController {
 
 		HttpSession session = request.getSession();
 		session.setAttribute("admin_id", admin.getID());
-
-		return "admin/dashboard";
+		 return "admin/dashboard";
 	}
 
-	@RequestMapping(value = "/admindashboard", method = RequestMethod.GET)
+//------------------------------------------------------------------------------
+	@GetMapping("/admindashboard")
 	public String dashboard(ModelMap map, javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
 		HttpSession session = request.getSession();
@@ -87,7 +93,8 @@ public class AdminController {
 		return "admin/dashboard";
 	}
 
-	@RequestMapping(value = "/adminchangepassword", method = RequestMethod.GET)
+	// ----------------------------------------------------------------------------
+	@GetMapping("/adminchangepassword")
 	public String changePwd(ModelMap map, javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
 		HttpSession session = request.getSession();
@@ -103,7 +110,9 @@ public class AdminController {
 		return "admin/change-password";
 	}
 
-	@RequestMapping(value = "/adminchangepwdaction", method = RequestMethod.POST)
+	// ----------------------------------------------------------------------------
+
+	@PostMapping("/adminchangepwdaction")
 	public String updatePassword(ModelMap map, @RequestParam(value = "pwd", required = true) String pwd,
 			@RequestParam(value = "pwd2", required = true) String pwd2, javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
@@ -127,7 +136,9 @@ public class AdminController {
 		return "admin/dashboard";
 	}
 
-	@RequestMapping(value = "/adminproducts", method = RequestMethod.GET)
+	// --------------------------------------------------------------------------------------
+
+	@GetMapping("/adminproducts")
 	public String products(ModelMap map, javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
 		HttpSession session = request.getSession();
@@ -151,7 +162,8 @@ public class AdminController {
 		return "admin/products";
 	}
 
-	@RequestMapping(value = "/admincategories", method = RequestMethod.GET)
+	// --------------------------------------------------------------------------
+	@GetMapping("/admincategories")
 	public String categories(ModelMap map, javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
 		HttpSession session = request.getSession();
@@ -165,7 +177,8 @@ public class AdminController {
 		return "admin/categories";
 	}
 
-	@RequestMapping(value = "/adminmembers", method = RequestMethod.GET)
+//--------------------------------------------------------------------------------
+	@GetMapping("/adminmembers")
 	public String members(ModelMap map, javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
 		HttpSession session = request.getSession();
@@ -179,7 +192,8 @@ public class AdminController {
 		return "admin/members";
 	}
 
-	@RequestMapping(value = "/adminpurchases", method = RequestMethod.GET)
+//-------------------------------------------------------------------------------------
+	@GetMapping("/adminpurchases")
 	public String purchases(ModelMap map, javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
 		HttpSession session = request.getSession();
@@ -224,7 +238,8 @@ public class AdminController {
 		return "admin/purchases";
 	}
 
-	@RequestMapping(value = "/admindeletecat", method = RequestMethod.GET)
+	// ---------------------------------------------------------------------------------------
+	@DeleteMapping("/admindeletecat")
 	public String deleteCategory(ModelMap map, @RequestParam(value = "id", required = true) String id,
 			javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
@@ -237,10 +252,11 @@ public class AdminController {
 		if (idValue > 0) {
 			categoryService.deleteCategory(idValue);
 		}
-		return "/admincategories";
+		return "redirect:admincategories";
 	}
 
-	@RequestMapping(value = "/admineditcat", method = RequestMethod.GET)
+//-----------------------------------------------------------------------------------------
+	@GetMapping("/admineditcat")
 	public String editCategory(ModelMap map, @RequestParam(value = "id", required = true) String id,
 			javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
@@ -257,10 +273,11 @@ public class AdminController {
 		}
 		map.addAttribute("category", category);
 		map.addAttribute("pageTitle", "ADMIN EDIT PRODUCT CATEGORY");
-		return "/admin/edit-category";
+		return "admin/edit-category";
 	}
 
-	@RequestMapping(value = "/admineditcataction", method = RequestMethod.POST)
+	// ---------------------------------------------------------------------------------------------
+	@PostMapping("/admineditcataction")
 	public String updateCategory(ModelMap map, @RequestParam(value = "id", required = true) String id,
 			@RequestParam(value = "name", required = true) String name, javax.servlet.http.HttpServletRequest request) {
 		long idValue = Long.parseLong(id);
@@ -278,7 +295,8 @@ public class AdminController {
 		return "redirect:admincategories";
 	}
 
-	@RequestMapping(value = "/admindeleteproduct", method = RequestMethod.GET)
+//-----------------------------------------------------------------------------
+	@DeleteMapping("/admindeleteproduct")
 	public String deleteProduct(ModelMap map, @RequestParam(value = "id", required = true) String id,
 			javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
@@ -294,7 +312,8 @@ public class AdminController {
 		return "redirect:adminproducts";
 	}
 
-	@RequestMapping(value = "/admineditproduct", method = RequestMethod.GET)
+//------------------------------------------------------------------------------------
+	@GetMapping("/admineditproduct")
 	public String editProduct(ModelMap map, @RequestParam(value = "id", required = true) String id,
 			javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
@@ -318,7 +337,8 @@ public class AdminController {
 		return "admin/edit-product";
 	}
 
-	@RequestMapping(value = "/admineditproductaction", method = RequestMethod.POST)
+//-----------------------------------------------------------------------------------
+	@PostMapping("/admineditproductaction")
 	public String updateProduct(ModelMap map, javax.servlet.http.HttpServletRequest request,
 			@RequestParam(value = "id", required = true) String id,
 			@RequestParam(value = "name", required = true) String name,
@@ -351,7 +371,8 @@ public class AdminController {
 		return "redirect:adminproducts";
 	}
 
-	@RequestMapping(value = "/adminlogout", method = RequestMethod.GET)
+//-------------------------------------------------------------------------------------------------
+	@GetMapping("/adminlogout")
 	public String logout(ModelMap map, javax.servlet.http.HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.invalidate();

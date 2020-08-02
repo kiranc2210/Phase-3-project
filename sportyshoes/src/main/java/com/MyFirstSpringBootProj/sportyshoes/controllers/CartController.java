@@ -6,18 +6,12 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.MyFirstSpringBootProj.sportyshoes.models.CartItem;
 import com.MyFirstSpringBootProj.sportyshoes.models.Product;
 import com.MyFirstSpringBootProj.sportyshoes.models.Purchase;
@@ -26,7 +20,10 @@ import com.MyFirstSpringBootProj.sportyshoes.services.ProductService;
 import com.MyFirstSpringBootProj.sportyshoes.services.PurchaseItemService;
 import com.MyFirstSpringBootProj.sportyshoes.services.PurchaseService;
 
- 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+@Api(value="Cart Controller of Sporty Shoes Application")
 @Controller
 public class CartController {
 
@@ -39,9 +36,9 @@ public class CartController {
 	@Autowired
 	private PurchaseItemService purchaseItemService; 
 
-
+	@ApiOperation(value = "User/Admin Will redirect to Cast Page")
 	  @SuppressWarnings("unchecked")
-	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	@GetMapping("/cart")
 	    public String cart(ModelMap map, javax.servlet.http.HttpServletRequest request) 
 	    {
 		  // check if user is logged in
@@ -64,9 +61,9 @@ public class CartController {
 		  map.addAttribute("pageTitle", "SPORTY SHOES - YOUR CART");
 	        return "cart"; 
 	    }
-	  
+	@ApiOperation(value = "Add product to cart")
 	  @SuppressWarnings("unchecked")
-	@RequestMapping(value = "/cartadditem", method = RequestMethod.GET)
+	@GetMapping("/cartadditem")
 	    public String cartAddItem(ModelMap map, javax.servlet.http.HttpServletRequest request,
 	    		@RequestParam(value="id", required=true) String productId) 
 	    {
@@ -101,7 +98,9 @@ public class CartController {
 		  
 	        return "redirect:cart"; 
 	    }	  
-	  @RequestMapping(value = "/cartdeleteitem", method = RequestMethod.GET)
+	  
+	@ApiOperation(value = "Delete the product from the cart by ID")
+	  @DeleteMapping("/cartdeleteitem")
 	    public String cartDeleteItem(ModelMap map, javax.servlet.http.HttpServletRequest request, 
 	    		@RequestParam(value="id", required=true) String id) 
 	    {
@@ -126,7 +125,9 @@ public class CartController {
 	        return "redirect:cart"; 
 	    }	
 
-	  @RequestMapping(value = "/checkout", method = RequestMethod.GET)
+	@ApiOperation(value = "Procduct Checkout")
+	  @SuppressWarnings("unchecked")
+	@GetMapping("/checkout")
 	    public String checkout(ModelMap map, javax.servlet.http.HttpServletRequest request) 
 	    {
 		  // check if user is logged in
@@ -145,7 +146,9 @@ public class CartController {
 	        return "checkout"; 
 	    }
 
-	  @RequestMapping(value = "/completepurchase", method = RequestMethod.GET)
+	@ApiOperation(value = "Complete Purchase")
+	  @SuppressWarnings("unchecked")
+	@GetMapping("/completepurchase")
 	    public String completePurchase(ModelMap map, javax.servlet.http.HttpServletRequest request) 
 	    {
 		  // check if user is logged in
@@ -186,7 +189,10 @@ public class CartController {
 	        return "redirect:confirm";  
 	    }
 
-	  @RequestMapping(value = "/gateway", method = RequestMethod.GET)
+	
+	@ApiOperation(value = "Payment Gatway")
+	  @SuppressWarnings("unchecked")
+	@GetMapping("/gateway")
 	    public String gateway(ModelMap map, javax.servlet.http.HttpServletRequest request) 
 	    {
 		  // check if user is logged in
@@ -207,7 +213,10 @@ public class CartController {
 	        return "gateway"; 
 	    }
 	  
-	  @RequestMapping(value = "/confirm", method = RequestMethod.GET)
+	
+	@ApiOperation(value = "Payment Confirmation")
+	  @SuppressWarnings("unchecked")
+	@GetMapping("/confirm")
 	    public String confirm(ModelMap map, javax.servlet.http.HttpServletRequest request) 
 	    {
 		  // check if user is logged in

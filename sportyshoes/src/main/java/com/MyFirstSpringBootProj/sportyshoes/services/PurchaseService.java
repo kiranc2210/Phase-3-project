@@ -37,12 +37,14 @@ public class PurchaseService {
 		@Transactional
 		public Purchase  updatePurchase(Purchase purchase) {
 			Purchase purchas= purchaseRepo.findById((long) purchase.getID()).orElse(null);
+			if(purchas!=null) {
 			purchas.setUserId(purchase.getUserId());
 			purchas.setTotal(purchase.getTotal());
 			purchas.setDate(Calendar.getInstance().getTime());
-			
-			 
 			return purchaseRepo.save(purchas);
+			}else {
+				return purchaseRepo.save(purchase);
+			}
 		}
 		
 
