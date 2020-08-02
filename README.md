@@ -69,3 +69,14 @@ Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/sw
 <p>CREATE DATABASE sportyshoes;</p>
 <p>INSERT INTO sportyshoes.admin_tbl VALUES(1001,"Admin_1001",61162433);</p>
 
+<p>
+Please Modify the following properties in “application.properties file” with your credentials:
+       spring.datasource.username=root
+spring.datasource.password=Mysql@61162433
+
+
+GitHub Project Link:
+git@github.com:kiranc2210/Phase-3-project.git
+Api Documentation Link:
+http://localhost:4560/swagger-ui.html
+</P>
