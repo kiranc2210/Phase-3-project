@@ -70,7 +70,7 @@ Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/sw
 <p>INSERT INTO sportyshoes.admin_tbl VALUES(1001,"Admin_1001",61162433);</p></b>
 
 <p>
-Please Modify the following properties in “application.properties file” with your credentials:</br>
+<h4>Please Modify the following properties in “application.properties file” with your credentials:</h4></br>
       <b> spring.datasource.username=root</br>
       spring.datasource.password=Mysql@61162433</b></br>
 
