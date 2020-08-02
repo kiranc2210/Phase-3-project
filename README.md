@@ -1,4 +1,4 @@
-# Phase-3-project
+# Phase-3-project  -- SPORTY SHOES
 E-Commerce application developed for performing Admin and Customer user role operations with respective user interfaces. Application is implemented in two parts:
 
 
