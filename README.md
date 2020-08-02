@@ -41,3 +41,5 @@ Features available based on the user role
 <p>Navigate to <a href="http://localhost:4560/">http://localhost:4560/</a> The app will automatically reload if you change any of the source files.</p>
 
 
+<b>>>To open Swagger (interactive) API documentation, navigate your browser to [YOUR-URL]/swagger-ui.html</b>
+Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/swagger-ui.html">http://localhost:4560/swagger-ui.html</a>
