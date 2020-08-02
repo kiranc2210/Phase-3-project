@@ -58,4 +58,5 @@ Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/sw
 <li>Run mvn install.</li>
 <li>Run mvn spring-boot:run.</li>
 <li>Spring Boot will import mock data into database by executing data.sql automatically.</li>
-<li>The backend server is running on localhost:4560.</li>
+<li>The backend server is running on http://localhost:4560/.</li>
+
