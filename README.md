@@ -64,5 +64,6 @@ Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/sw
 
 <p><b>Prior Run the below queries for the Admin Login on the MySql Workbentch</b></p>
 </br>
+<p>CREATE DATABASE sportyshoes;</p>
 <p>INSERT INTO sportyshoes.admin_tbl VALUES(1001,"Admin_1001",61162433);</p>
 
