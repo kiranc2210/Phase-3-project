@@ -63,7 +63,7 @@ Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/sw
 <li>The backend server is running on http://localhost:4560/.</li>
 </br>
 <b>OR</b>
-
+</br>
 <p><b>Prior Run the below queries for the Admin Login on the MySql Workbentch</b></p>
 </br><b>
 <p>CREATE DATABASE sportyshoes;</p>
