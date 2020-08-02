@@ -36,3 +36,5 @@ Features available based on the user role
 <li>Hibernate with JPA</li>
 <li>MySQL</li></ul>
 
+<b>Web services project can be found in <a href="https://github.com/cyela/Springboot-Web-Services">Sporty-Shoes</a></b>
+
