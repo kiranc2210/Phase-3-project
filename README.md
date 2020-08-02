@@ -51,7 +51,7 @@ Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/sw
 
 <b>How to Run</b>
 <ul>
-    <li>
+    
 <li>Install MYSQL</li>
 <li>Configure datasource in application.properties</li>
 <li>cd Sport Shoes</li>
