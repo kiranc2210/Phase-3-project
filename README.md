@@ -29,12 +29,15 @@ Features available based on the user role
 
 <b>TECHNOLOGIES</b>
 <ul>
+    <li>Java 8</li>
 <li>JSP</li>
 <li>CSS3</li>
 <li>Swagger2 for API Documentation.</li>
 <li>Spring Boot</li>
 <li>Hibernate with JPA</li>
-<li>MySQL</li></ul>
+<li>MySQL</li>
+ <li> Maven</li>
+</ul>
 
 <b>Web services project can be found in ("git@github.com:kiranc2210/Phase-3-project.git")<a href="http://localhost:4560/">Sporty-Shoes</a></b>
 
@@ -43,3 +46,16 @@ Features available based on the user role
 
 <b>>>To open Swagger (interactive) API documentation, navigate your browser to [YOUR-URL]/swagger-ui.html</b>
 Click on the Like to redirect to Swagger UI--> <a href="http://localhost:4560/swagger-ui.html">http://localhost:4560/swagger-ui.html</a>
+
+
+
+<b>How to Run</b>
+<ul>
+    <li>
+<li>Install MYSQL</li>
+<li>Configure datasource in application.properties</li>
+<li>cd Sport Shoes</li>
+<li>Run mvn install.</li>
+<li>Run mvn spring-boot:run.</li>
+<li>Spring Boot will import mock data into database by executing data.sql automatically.</li>
+<li>The backend server is running on localhost:4560.</li>
